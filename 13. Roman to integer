@@ -1,0 +1,27 @@
+int missingNumber(int* nums, int numsSize) {
+
+    int i,temp=nums[0],sum=nums[0];
+    for(i=1;i<numsSize;i++)
+    {
+        if(temp<nums[i])
+        {
+            temp=nums[i];
+        }
+        sum=sum+nums[i];
+    }
+    printf("%d\n\n",sum);
+    if(temp!=numsSize)
+    {
+        return temp+1;
+    }
+    else
+    {
+        int c=0;
+        for(i=temp;i>0;i--)
+        {
+            c=c+i;
+        }
+        temp=c-sum;
+        return temp;
+    }
+}
